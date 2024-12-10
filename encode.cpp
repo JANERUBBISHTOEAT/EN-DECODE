@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-//char map[3]{'ºß','àÅ','°¡'};
+//char map[3]{'å“¼','å—¯','å•Š'};
 bool cn[2000];//if unicode or ascll
 int pr[2000];
 int size_A;
@@ -84,12 +84,12 @@ int main ()
 			}
 	//		switch (pr[i])
 	//		{
-	//			case 0: output[++tar] = "ºß"; break;
-	//			case 1: output[++tar] = "àÅ"; break;
-	//			case 2: output[++tar] = "°¡"; break;
+	//			case 0: output[++tar] = "å“¼"; break;
+	//			case 1: output[++tar] = "å—¯"; break;
+	//			case 2: output[++tar] = "å•Š"; break;
 	//		}
 			//output[++tar] = map[pr[i]];
-			output[++tar] = pr[i];//print 'ºßàÅ°¡'
+			output[++tar] = pr[i];//print 'å“¼å—¯å•Š'
 //			printf ("%d ", output[tar]);
 		}
 //		putchar ('\n');
@@ -108,9 +108,9 @@ int main ()
 			//printf ("\n%d\n", (size_A*2+size_U)*5);
 			switch (output[i])
 			{
-				case 0: printf ("ºß"); break; 
-				case 1: printf ("àÅ"); break; 
-				case 2: printf ("°¡"); break;
+				case 0: printf ("å“¼"); break; 
+				case 1: printf ("å—¯"); break; 
+				case 2: printf ("å•Š"); break;
 				case 3:
 				{
 					int dot = rand() % 3 + 2;

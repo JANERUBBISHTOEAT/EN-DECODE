@@ -46,9 +46,9 @@ int main ()
 			tmp = getchar();
 			box[1] = tmp;
 			
-			if 		(box == string("ºß")) pr[++tar] = 0; 
-			else if (box == string("àÅ")) pr[++tar] = 1; 
-			else if (box == string("°¡")) pr[++tar] = 2; 
+			if 		(box == string("å“¼")) pr[++tar] = 0; 
+			else if (box == string("å—¯")) pr[++tar] = 1; 
+			else if (box == string("å•Š")) pr[++tar] = 2; 
 		
 //			printf ("%d", pr[tar]);
 		}
@@ -62,9 +62,9 @@ int main ()
 //			tmp = -tmp;
 			box[1] = tmp;
 			
-			if 		(box == string("ºß")) pr[++tar] = 0; 
-			else if (box == string("àÅ")) pr[++tar] = 1; 
-			else if (box == string("°¡")) pr[++tar] = 2;
+			if 		(box == string("å“¼")) pr[++tar] = 0; 
+			else if (box == string("å—¯")) pr[++tar] = 1; 
+			else if (box == string("å•Š")) pr[++tar] = 2;
 			else
 			{
 				printf ("\n\nUndefined value: \'%c\' & \'%c\' \nRestricted input is reqired!\nNo modifiction is suggested.\n",box[0],box[1]);
