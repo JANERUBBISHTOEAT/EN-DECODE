@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-// char map[3]{'哼','嗯','啊'};
 bool cn[2000]; // if unicode or ascll
 int pr[2000];
 int size_A;
@@ -44,7 +43,6 @@ int main()
 				cn[cnt] = 1; // mark ascll
 				size_A++;
 			}
-			//			printf ("%d = ", ch);
 
 			int ttmp = 5;
 			memset(ans, 0, sizeof(ans));
@@ -57,55 +55,24 @@ int main()
 
 			for (int j = 1; j <= 5; j++)
 			{
-				//				printf ("%d ", ans[j]);
 				pr[(i - 1) * 5 + j] = ans[j];
 			}
-			//			if (cn[i])//log
-			//			{
-			//				printf ("ASC\n");
-			//			}
-			//			else printf ("UNI\n");
-			//			putchar('\n');
 		}
-		//	for (int i = 1; i <= size * 5; i++)
-		//	{
-		//		printf ("%d ", pr[i]);
-		//	}
-		//	putchar('\n');
 
 		int tar = 0;
 		for (int i = 1; i <= size * 5; i++)
 		{
-			// printf ("%d ", pr[i]);
 			if (cn[int((i - 1) / 5) + 1])
 			{
 				output[++tar] = 3; // print '.'
-								   //				printf ("%d ", output[tar]);
 			}
-			//		switch (pr[i])
-			//		{
-			//			case 0: output[++tar] = "哼"; break;
-			//			case 1: output[++tar] = "嗯"; break;
-			//			case 2: output[++tar] = "啊"; break;
-			//		}
-			// output[++tar] = map[pr[i]];
 			output[++tar] = pr[i]; // print '哼嗯啊'
-								   //			printf ("%d ", output[tar]);
 		}
-		//		putchar ('\n');
-		//		putchar ('\n');
 
 		cnt = 0;
-		//		while (input[++cnt] != 0)//log
-		//		{
-		//			printf ("%d ", char(input[cnt]));
-		//		}
-		//		putchar ('\n');
-		//		putchar ('\n');
 
 		for (int i = 1; i <= (size_A * 2 + size_U) * 5; i++)
 		{
-			// printf ("\n%d\n", (size_A*2+size_U)*5);
 			switch (output[i])
 			{
 			case 0:
@@ -128,8 +95,6 @@ int main()
 			}
 			}
 		}
-
-		// printf ("%d", input);
 		putchar('\n');
 		putchar('\n');
 	}

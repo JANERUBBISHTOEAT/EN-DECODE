@@ -18,16 +18,6 @@ int main()
 
 	while ((tmp = getchar()) != EOF)
 	{
-		//		if (tmp != '\n' || tmp != '.')
-		//		{
-		//			printf ("\nRestricted input is reqired!\nNo modifiction is suggested.\n");
-		//			tmp=sum=cnt=un_1=un_2=0;
-		//			memset (pr, 0, sizeof(pr));
-		//			memset (box, '\0', sizeof(pr));
-		//			putchar ('\n');
-		//
-		//			continue;
-		//		}
 		if (tmp == '\n')
 		{
 			tmp = sum = cnt = un_1 = un_2 = 0;
@@ -38,7 +28,7 @@ int main()
 			tmp = getchar();
 			flag = true;
 		}
-		if (char(tmp) == '.') // ascll
+		if (char(tmp) == '.') // ascii
 		{
 			is_ASC = true;
 			while (char(tmp = getchar()) == '.')
@@ -55,8 +45,6 @@ int main()
 				pr[++tar] = 1;
 			else if (box == string("啊"))
 				pr[++tar] = 2;
-
-			// printf("%d", pr[tar]);
 		}
 		else // unicode
 		{
@@ -92,8 +80,6 @@ int main()
 			sum += pr[5] * 1;
 			if (is_ASC)
 			{
-				//				if (flag) putchar ('\n');
-				//				flag = false;
 				printf("%c", char(sum));
 			}
 			else
@@ -104,12 +90,8 @@ int main()
 				}
 				else // right uni
 				{
-					//					if (flag) putchar ('\n');
-					//					flag = false;
 					un_2 = sum + 128;
 					char bx[3] = {un_1, un_2, '\0'};
-					//					printf ("%d %d\n", un_1, un_2);
-
 					printf("%s", bx);
 					un_1 = un_2 = 0;
 				}
