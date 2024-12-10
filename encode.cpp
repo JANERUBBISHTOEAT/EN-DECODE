@@ -1,5 +1,9 @@
 #include <bits/stdc++.h>
+#ifdef _WIN32
+#include <windows.h>
+#endif
 using namespace std;
+
 bool cn[2000]; // if unicode or ascll
 int pr[2000];
 int size_A;
@@ -7,6 +11,10 @@ int size_U;
 
 int main()
 {
+#ifdef _WIN32
+	SetConsoleCP(65001);
+	SetConsoleOutputCP(65001);
+#endif
 	srand((unsigned)time(NULL));
 	int input[2000];
 	int output[2000];

@@ -1,5 +1,9 @@
 #include <bits/stdc++.h>
+#ifdef _WIN32
+#include <windows.h>
+#endif
 using namespace std;
+
 int pr[6];
 char box[3];
 int tar;
@@ -7,6 +11,10 @@ bool is_ASC;
 bool flag;
 int main()
 {
+#ifdef _WIN32
+	SetConsoleCP(65001);
+	SetConsoleOutputCP(65001);
+#endif
 	//	char egg[3] = {256-57,256-61,'\0'};
 	//	printf ("%s", egg);
 	int tmp = 0;
@@ -95,7 +103,12 @@ int main()
 				else // third byte
 				{
 					un_3 = sum + 128;
-					char bx[4] = {un_1, un_2, un_3, '\0'};
+					char bx[4] = {
+						static_cast<char>(un_1),
+						static_cast<char>(un_2),
+						static_cast<char>(un_3),
+						'\0',
+					};
 					printf("%s", bx);
 					un_1 = un_2 = un_3 = 0;
 				}
