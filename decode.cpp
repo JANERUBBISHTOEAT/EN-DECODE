@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int pr[6];
-char box[2];
+char box[3];
 int tar;
 bool is_ASC;
 bool flag;
@@ -46,6 +46,8 @@ int main()
 			box[0] = tmp;
 			tmp = getchar();
 			box[1] = tmp;
+			tmp = getchar();
+			box[2] = tmp;
 
 			if (box == string("哼"))
 				pr[++tar] = 0;
@@ -54,17 +56,17 @@ int main()
 			else if (box == string("啊"))
 				pr[++tar] = 2;
 
-			//			printf ("%d", pr[tar]);
+			// printf("%d", pr[tar]);
 		}
 		else // unicode
 		{
 			is_ASC = false;
 
-			//			tmp = -tmp;
 			box[0] = tmp;
 			tmp = getchar();
-			//			tmp = -tmp;
 			box[1] = tmp;
+			tmp = getchar();
+			box[2] = tmp;
 
 			if (box == string("哼"))
 				pr[++tar] = 0;
@@ -74,11 +76,11 @@ int main()
 				pr[++tar] = 2;
 			else
 			{
-				printf("\n\nUndefined value: \'%c\' & \'%c\' \nRestricted input is reqired!\nNo modifiction is suggested.\n", box[0], box[1]);
+				printf("\n\nUndefined value: \'%c\' & \'%c\' \nRestricted input is required!\nNo modification is suggested.\n", box[0], box[1]);
 				system("pause");
 				return -1;
 			}
-			//			printf ("%d", pr[tar]);
+			printf("%d", pr[tar]);
 		}
 		if (++cnt == 5)
 		{
