@@ -15,12 +15,13 @@ int main()
 	// for unicode
 	int un_1 = 0;
 	int un_2 = 0;
+	int un_3 = 0;
 
 	while ((tmp = getchar()) != EOF)
 	{
 		if (tmp == '\n')
 		{
-			tmp = sum = cnt = un_1 = un_2 = 0;
+			tmp = sum = cnt = un_1 = un_2 = un_3 = 0;
 			memset(pr, 0, sizeof(pr));
 			memset(box, '\0', sizeof(pr));
 			putchar('\n');
@@ -68,7 +69,6 @@ int main()
 				system("pause");
 				return -1;
 			}
-			printf("%d", pr[tar]);
 		}
 		if (++cnt == 5)
 		{
@@ -84,16 +84,20 @@ int main()
 			}
 			else
 			{
-				if (un_1 == 0) // left uni
+				if (un_1 == 0) // first byte
 				{
 					un_1 = sum + 128;
 				}
-				else // right uni
+				else if (un_2 == 0) // second byte
 				{
 					un_2 = sum + 128;
-					char bx[3] = {un_1, un_2, '\0'};
+				}
+				else // third byte
+				{
+					un_3 = sum + 128;
+					char bx[4] = {un_1, un_2, un_3, '\0'};
 					printf("%s", bx);
-					un_1 = un_2 = 0;
+					un_1 = un_2 = un_3 = 0;
 				}
 			}
 		}
